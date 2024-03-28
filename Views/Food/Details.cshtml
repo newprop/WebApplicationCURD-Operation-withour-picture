@@ -1,0 +1,49 @@
+﻿@model WebApplication1.Models.food
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>food</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.foodName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.foodName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.foodDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.foodDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.foodCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.foodCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.foodType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.foodType)
+        </dd>
+    </dl>
+    @await Component.InvokeAsync("ItemList", Model.Items)
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
